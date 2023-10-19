@@ -1,0 +1,51 @@
+<div class="container-fulid  mt-5 d-flex">
+  <div class="container ">
+    <div class="form-outline mb-4 me-3 mt-5">
+      <input type="text" class="form-control" [(ngModel)]="Name"  />
+      <label class="form-label" for="form1Example1">Name</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4 me-3 mt-5" >
+      <input type="text"  class="form-control"  [(ngModel)]="PhoneNumber"/>
+      <label class="form-label" for="form1Example2">PhoneNumber</label>
+    </div>
+    <div class="form-outline mb-4 me-3 mt-5" >
+      <input type="text" class="form-control"[(ngModel)]="Email" />
+      <label class="form-label" for="form1Example2">Email</label>
+    </div>
+
+
+    <button class="btn btn-success col-12 me-3 " (click)="add()"> Save</button>
+  </div>
+
+
+
+  <!--table-->
+
+  <div class="container ">
+    <table class="table mt-2">
+      <thead>
+        <tr>
+          
+          <th scope="col">Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of datas">
+         
+          <td>{{data.Name}}</td>
+          <td>{{data.PhoneNumber}}</td>
+          <td>{{data.Email}}</td>
+          <td><button class="btn btn-dark  me-3"  (click)="edit(data.id)"> Edit</button></td>
+          <td><button class="btn btn-danger  me-3" (click)="del(data.id)" > Delete</button></td>
+        </tr>
+     
+      </tbody>
+    </table>
+  </div>
+</div>
